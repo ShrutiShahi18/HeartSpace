@@ -42,7 +42,7 @@ Make sure your code is pushed to GitHub.
 - **Runtime**: `Node`
 - **Build Command**: 
   ```
-  cd client && npm install --include=dev && npm run build && cd ../server && npm install --production
+  cd client && npm install && npm run build && cd ../server && npm install --production
   ```
 - **Start Command**: 
   ```
