@@ -17,7 +17,8 @@ const corsOptions = {
     const allowedOrigins = [
       'http://localhost:3000',
       'http://localhost:5173',
-      process.env.FRONTEND_URL, // Set this in production
+      'https://heartspace-frame.onrender.com', // Frontend URL
+      process.env.FRONTEND_URL, // Set this in production if different
     ].filter(Boolean); // Remove undefined values
     
     // Allow all origins in development, or check against allowed list
