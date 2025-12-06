@@ -7,7 +7,34 @@ require('dotenv').config();
 const app = express();
 
 // Middleware
-app.use(cors());
+// CORS configuration - allow frontend domains
+const corsOptions = {
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+    
+    // List of allowed origins
+    const allowedOrigins = [
+      'http://localhost:3000',
+      'http://localhost:5173',
+      process.env.FRONTEND_URL, // Set this in production
+    ].filter(Boolean); // Remove undefined values
+    
+    // Allow all origins in development, or check against allowed list
+    if (process.env.NODE_ENV !== 'production' || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      // In production, you can be more restrictive
+      // For now, allow all origins (you can restrict this later)
+      callback(null, true);
+    }
+  },
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // Serve static files from the React app in production
