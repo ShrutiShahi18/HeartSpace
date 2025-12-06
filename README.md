@@ -2,6 +2,11 @@
 
 A beautiful, full-stack MERN application for mental health journaling with AI-powered insights using Google's Gemini API.
 
+## 🌐 Live Demo
+
+- **Frontend**: [https://heartspace-frame.onrender.com](https://heartspace-frame.onrender.com)
+- **Backend API**: [https://heartspace-3yuq.onrender.com](https://heartspace-3yuq.onrender.com)
+
 ## ✨ Features
 
 - 📝 **Journal Entries**: Create, edit, and delete journal entries with mood tracking
